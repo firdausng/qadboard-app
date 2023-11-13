@@ -1,0 +1,51 @@
+name = "qadboard-app"
+#main = "src/index.ts"
+compatibility_date = "2023-11-12"
+
+d1_databases = [
+	{ binding = "DB", database_name = "qadboard-local", database_id = "ae0caa03-6500-4335-9388-1851892afebc" }
+]
+
+#kv_namespaces = [
+#	{ binding = "MY_KV_NAMESPACE", id = "f00ba0e36d3a4b73b5b7eca2c382ed34", preview_id = "21e96510483e4fefacb4b09eb9fecb5a" }
+#]
+# Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
+# Note: Use secrets to store sensitive data.
+# Docs: https://developers.cloudflare.com/workers/platform/environment-variables
+#[vars]
+#DATABASE_URL = "postgres://mail4frenz:rkXdMQ2LRha5@ep-broken-bush-50985266.ap-southeast-1.aws.neon.tech/neondb"
+
+# Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
+# Docs: https://developers.cloudflare.com/workers/runtime-apis/kv
+#[[kv_namespaces]]
+#binding = "MY_KV_NAMESPACE"
+#id = "f00ba0e36d3a4b73b5b7eca2c382ed34"
+#preview_id = "21e96510483e4fefacb4b09eb9fecb5a"
+
+[env.staging]
+name = "qadboard-app-staging"
+
+d1_databases = [
+	{ binding = "DB", database_name = "qadboard-staging", database_id = "ae0caa03-6500-4335-9388-1851892afebc" }
+]
+
+#kv_namespaces = [
+#	{ binding = "MY_KV_NAMESPACE", id = "6664c786f22c468b81b1ab89e798df4e", preview_id = "0265c8d332a0478aa57a8ccce0683831" }
+#]
+#
+#[env.staging.vars]
+#DATABASE_URL = "postgres://mail4frenz:rkXdMQ2LRha5@ep-broken-bush-50985266.ap-southeast-1.aws.neon.tech/neondb"
+
+[env.prod]
+name = "qadboard-app-prod"
+
+d1_databases = [
+	{ binding = "DB", database_name = "qadboard-prod", database_id = "4a5f7235-946b-44fe-baf2-7e36ef327557" }
+]
+
+#kv_namespaces = [
+#	{ binding = "MY_KV_NAMESPACE", id = "5b2143a6b4cc4e70be5a4a3db6ec37a7", preview_id = "cf33396548ff4681839ca95da7b91392" }
+#]
+#
+#[env.prod.vars]
+#DATABASE_URL = "postgres://mail4frenz:rkXdMQ2LRha5@ep-broken-bush-50985266.ap-southeast-1.aws.neon.tech/neondb"

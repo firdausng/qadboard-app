@@ -1,0 +1,49 @@
+{
+	"name": "qadboard",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"wrangler:dev": "wrangler pages dev -- vite dev",
+		"d1:local": "wrangler d1 execute qadboard-local --local --file=./schemas/schema.sql",
+		"d1:staging": "wrangler d1 execute qadboard-staging --file schemas/schema.sql",
+		"d1:prod": "wrangler d1 execute qadboard-prod --file schemas/schema.sql",
+		"d1:local:feed": "wrangler d1 execute qadboard-local --local --file=./schemas/data_feed.sql",
+		"d1:staging:feed": "wrangler d1 execute qadboard-staging --file=./schemas/data_feed.sql",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20231025.0",
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-cloudflare": "^2.3.3",
+		"@sveltejs/kit": "^1.20.4",
+		"@tailwindcss/typography": "^0.5.10",
+		"autoprefixer": "^10.4.16",
+		"flowbite": "^2.0.0",
+		"flowbite-svelte": "^0.44.19",
+		"flowbite-svelte-icons": "^0.4.5",
+		"postcss": "^8.4.31",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.3",
+		"tailwindcss": "^3.3.5",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.4.2",
+		"wrangler": "^3.15.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fontsource/caveat-brush": "^5.0.8",
+		"@fontsource/fira-mono": "^5.0.8",
+		"@fontsource/indie-flower": "^5.0.17",
+		"@fontsource/jetbrains-mono": "^5.0.17",
+		"@fontsource/manrope": "^5.0.17",
+		"@fontsource/ubuntu": "^5.0.8",
+		"@magidoc/plugin-svelte-marked": "^4.1.2",
+		"lucide-svelte": "^0.292.0",
+		"marked": "^9.1.6"
+	}
+}
